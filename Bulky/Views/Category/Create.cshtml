@@ -1,0 +1,28 @@
+﻿@model Category;
+<form class="border-1 border-secondary" method="post">
+	<div class="row border-bottom mb-4"><h4>Create Category</h4></div>
+	@* <div asp-validation-summary="ModelOnly" class="text-danger"></div> *@
+	<div class="row mb-3">
+		<label asp-for="Name" class="p-0"></label>
+		<input asp-for="Name" type="text" class="p-1 form-control" />
+		<span asp-validation-for="Name" class="text-danger" ></span>
+	</div>	
+	<div class="row mb-3">
+		<label asp-for="DispleyOrder" class="p-0"></label>
+		<input asp-for="DispleyOrder" type="number" min="1" class="p-1 form-control"/>
+		<span asp-validation-for="DispleyOrder" class="text-danger" ></span>
+	</div>
+	<div class="row">
+		<div class="col-6 col-md-3 p-0">
+			<button type="submit" class="btn btn-primary form-control rounded-0">Submit</button>
+		</div>
+		<div class="col-6 col-md-3 p-0">
+			<a asp-controller="Category" asp-action="Index" class="btn btn-outline-dark form-control rounded-0">Back To Category</a>
+		</div>
+	</div>
+</form>
+@section Scripts{
+	@{
+		<partial name="_ValidationScriptsPartial" />
+	}
+} 
